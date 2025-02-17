@@ -10,14 +10,14 @@ resource "ovh_cloud_project_kube" "cluster" {
     private_network_routing_as_default = true
   }
 
-#   customization {
-#     apiserver {
-#       admissionplugins {
-#         enabled  = ["NodeRestriction"]
-#         disabled = ["AlwaysPullImages"] # the long-awaited option <3, see https://github.com/ovh/public-cloud-roadmap/issues/70#issuecomment-1235364408
-#       }
-#     }
-#   }
+  #   customization {
+  #     apiserver {
+  #       admissionplugins {
+  #         enabled  = ["NodeRestriction"]
+  #         disabled = ["AlwaysPullImages"] # the long-awaited option <3, see https://github.com/ovh/public-cloud-roadmap/issues/70#issuecomment-1235364408
+  #       }
+  #     }
+  #   }
 }
 
 resource "local_sensitive_file" "kubeconfig" {
