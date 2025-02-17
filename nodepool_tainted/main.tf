@@ -1,11 +1,11 @@
 resource "ovh_cloud_project_kube_nodepool" "pool" {
   service_name = var.project_id
-  name       = var.suffix == "" ? (
-                                    "${var.purpose}-${var.clusterName}"
-                                  ) : (
-                                    "${var.purpose}-${var.suffix}-${var.clusterName}"
-                                  )
-  kube_id      = var.clusterId
+  name = var.suffix == "" ? (
+    "${var.purpose}-${var.clusterName}"
+    ) : (
+    "${var.purpose}-${var.suffix}-${var.clusterName}"
+  )
+  kube_id       = var.clusterId
   flavor_name   = "b2-7"
   desired_nodes = var.desired_nodes
   max_nodes     = var.max_nodes
@@ -39,14 +39,14 @@ variable "taints" {
   description = "Network configuration for the instance. Only one between private_network and psc_config can be used."
   type = object({
     effect = string
-    key = string
-    value = string
+    key    = string
+    value  = string
 
   })
 
-default = {
-  effect = "value"
-  key = "value"
-  value = "value"
-}
+  default = {
+    effect = "value"
+    key    = "value"
+    value  = "value"
+  }
 }
