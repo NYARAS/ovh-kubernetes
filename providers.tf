@@ -1,7 +1,7 @@
 terraform {
 
   backend "s3" {
-    bucket                      = "nsw-main-terraform-state"
+    bucket                      = "demo-main-terraform-state"
     key                         = "prod-terraform"
     region                      = "de"
     endpoint                    = "https://s3.de.io.cloud.ovh.net/"
