@@ -18,3 +18,7 @@ module "node_pool_untainted" {
   desired_nodes   = 1
   private_network = module.vpc.private_network
 }
+
+module "dockerregistry" {
+  source = "./private_cr"
+}
