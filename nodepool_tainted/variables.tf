@@ -44,3 +44,19 @@ variable "desired_nodes" {
 variable "clusterId" {
 
 }
+
+variable "taints" {
+  description = "Network configuration for the instance. Only one between private_network and psc_config can be used."
+  type = object({
+    effect = string
+    key    = string
+    value  = string
+
+  })
+
+  default = {
+    effect = "value"
+    key    = "value"
+    value  = "value"
+  }
+}
