@@ -10,6 +10,7 @@ resource "ovh_cloud_project_kube_nodepool" "pool" {
   desired_nodes = var.desired_nodes
   max_nodes     = var.max_nodes
   min_nodes     = var.min_nodes
+  autoscale     = true
   template {
     metadata {
       annotations = {
@@ -35,18 +36,3 @@ resource "ovh_cloud_project_kube_nodepool" "pool" {
   }
 }
 
-variable "taints" {
-  description = "Network configuration for the instance. Only one between private_network and psc_config can be used."
-  type = object({
-    effect = string
-    key    = string
-    value  = string
-
-  })
-
-  default = {
-    effect = "value"
-    key    = "value"
-    value  = "value"
-  }
-}
